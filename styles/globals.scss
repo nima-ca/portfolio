@@ -1,0 +1,34 @@
+@import "abstracts/mixins";
+
+:root {
+  --max-width: 110rem;
+  --border-radius: 1.2rem;
+
+  --color-primary: #232020;
+  --color-secondary: #f4f4f4;
+  --color-accent: #ff7315;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  max-height: 100vh;
+  height: 100vh;
+}
+
+.dark-mode {
+  --color-primary: #f4f4f4;
+  --color-secondary: #232020;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
