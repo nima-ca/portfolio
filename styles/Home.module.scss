@@ -1,0 +1,57 @@
+.home {
+  height: 80%;
+  @include center;
+  flex-direction: column;
+}
+
+.header {
+  width: 65rem;
+  height: 7rem;
+  font-size: 1.8rem;
+  @include center;
+}
+
+.subHeader {
+  width: 40rem;
+  text-align: center;
+  font-size: 1.4rem;
+
+  & > span {
+    color: var(--color-accent);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    width: 50rem;
+    font-size: 1.5rem;
+  }
+
+  .subHeader {
+    width: 30rem;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header {
+    text-align: center;
+    width: 25rem;
+    font-size: 1.2rem;
+  }
+
+  .subHeader {
+    width: 25rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .header {
+    text-align: center;
+    width: 20rem;
+    font-size: 1rem;
+  }
+
+  .subHeader {
+    width: 19rem;
+  }
+}

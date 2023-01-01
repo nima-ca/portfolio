@@ -51,7 +51,13 @@
 }
 
 @media screen and (max-width: 480px) {
+  .footer {
+    & > div {
+      align-items: flex-end;
+    }
+  }
   .social {
+    margin-bottom: -1rem;
     width: 1.5rem !important;
     flex-direction: column;
   }

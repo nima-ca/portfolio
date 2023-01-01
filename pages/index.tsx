@@ -1,20 +1,37 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Roboto_Mono } from "@next/font/google";
+import { TypeAnimation } from "react-type-animation";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Nima Nekouei Nia</title>
-        <meta
-          name="description"
-          content="This is a Portfolio website created by nima himself!"
+    <main className={styles.home}>
+      <div className={styles.header}>
+        <TypeAnimation
+          cursor={false}
+          sequence={[
+            `I'm a Front End Developer! 😁`,
+            2000,
+            "I Develop Web Applications! 🍕",
+            2000,
+            "I Love JavaScript and TypeScript! 😍",
+            2000,
+            "I use React and NextJs! 🧙‍♂️",
+            2000,
+          ]}
+          speed={60}
+          wrapper="h2"
+          repeat={Infinity}
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-    </>
+      </div>
+      <p className={styles.subHeader}>
+        Hi, I'm <span>NIMA NEKOUEI NIA</span>, A React Front-End Developer based
+        in Isfahan, Iran.
+      </p>
+    </main>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }
