@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./Navbar.module.scss";
 import { useRouter } from "next/router";
+import ColorMode from "../../ColorMode/ColorMode";
 
 const Navbar = () => {
   const router = useRouter();
@@ -21,9 +22,7 @@ const Navbar = () => {
           <li className={router.pathname == "/contact" ? styles.active : ""}>
             <Link href="/contact">Contact Me</Link>
           </li>
-          <li className={router.pathname == "/123" ? styles.active : ""}>
-            <Link href="/">DarkMode</Link>
-          </li>
+          <ColorMode />
         </ul>
       </nav>
     </header>
