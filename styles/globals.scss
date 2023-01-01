@@ -38,7 +38,9 @@ body {
   font-family: "Roboto Mono", monospace, Arial, Helvetica, sans-serif;
 }
 body > div {
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 a {
   color: inherit;
@@ -48,4 +50,17 @@ a {
 li {
   all: unset;
   cursor: pointer;
+}
+
+.button {
+  color: var(--color-accent);
+  font-size: 1rem;
+  border: 1px solid var(--color-accent);
+  padding: 0.7rem 1rem;
+  @include center;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+  }
 }

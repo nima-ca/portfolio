@@ -1,8 +1,7 @@
 .footer {
   width: 100vw;
   @include center;
-  position: absolute;
-  bottom: 2rem;
+  margin: auto 0 2rem 0;
 
   & > div {
     display: flex;

@@ -44,7 +44,11 @@ const Footer = () => {
           >
             <Github />
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://t.me/Nima_ca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Telegram />
           </a>
         </div>
