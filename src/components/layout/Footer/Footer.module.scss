@@ -1,0 +1,58 @@
+.footer {
+  width: 100vw;
+  @include center;
+  position: absolute;
+  bottom: 2rem;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .social {
+    width: 7rem;
+    display: flex;
+    justify-content: space-between;
+    a {
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: var(--color-accent);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .info {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      color: var(--color-accent);
+    }
+
+    & > div:first-of-type {
+      margin-bottom: 0.2rem;
+    }
+
+    span {
+      opacity: 0.7;
+    }
+
+    svg {
+      margin-bottom: -0.25rem;
+      margin-right: 0.5rem;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social {
+    width: 1.5rem !important;
+    flex-direction: column;
+  }
+}
