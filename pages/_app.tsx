@@ -1,7 +1,7 @@
 import { Roboto_Mono } from "@next/font/google";
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
-import Typography from "../src/Typography";
+import Layout from "../src/components/layout/Layout";
 
 const robotoMono = Roboto_Mono({
   weight: ["400", "700"],
@@ -9,9 +9,8 @@ const robotoMono = Roboto_Mono({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Typography fontFamily={robotoMono.style.fontFamily} fontSize="1.6rem" />
+    <Layout>
       <Component {...pageProps} />
-    </>
+    </Layout>
   );
 }
