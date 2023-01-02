@@ -1,7 +1,7 @@
 .header {
   @include center;
   width: 100%;
-  height: 5rem;
+  height: 8rem;
 }
 
 .navbar {
@@ -10,17 +10,24 @@
   justify-content: space-between;
   width: 90%;
 
+  & > div {
+    @include center;
+  }
+
   h3 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     text-transform: capitalize;
     span {
       color: var(--color-accent);
     }
   }
-  ul {
+  .mobileNav {
+    display: none;
+  }
+  .desktopNav {
     li {
-      font-size: 1.1rem;
-      margin: 0 2rem;
+      font-size: 1.7rem;
+      margin: 0 3rem;
 
       position: relative;
       transition: color 0.2s ease-in-out;
@@ -32,6 +39,165 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .navbar {
+    & > div {
+      flex-direction: row-reverse;
+
+      svg {
+        margin: 0.5rem 2rem 0 2rem;
+      }
+    }
+  }
+  .desktopNav {
+    display: none;
+  }
+  .mobileNav {
+    position: relative;
+    display: block !important;
+    margin-bottom: -0.7rem;
+
+    &--list {
+      height: 0;
+      overflow: hidden;
+      background-color: var(--color-primary);
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      font-size: 1.4rem;
+      left: -10rem;
+      top: 4rem;
+      width: 15rem;
+      @include center;
+      li {
+        width: 10rem;
+        opacity: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      &.is-active {
+        animation: slide 0.3s forwards;
+
+        li {
+          animation: opacity 0.5s forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    height: 0;
+  }
+  100% {
+    border: 1px solid var(--color-font);
+    height: 10rem;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .active {
   color: var(--color-accent);
+}
+
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: var(--color-font);
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 30px;
+  height: 3.5px;
+  background-color: var(--color-font);
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+     * Spin
+     */
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin .hamburger-inner::before {
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+.hamburger--spin .hamburger-inner::after {
+  transition: bottom 0.1s 0.25s ease-in,
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out,
+    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }

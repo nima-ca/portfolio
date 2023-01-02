@@ -3,14 +3,18 @@
   @include center;
   text-align: center;
   & > div {
-    width: 60rem;
+    width: 80rem;
 
     & > h1 {
-      font-size: 1.8rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
       span {
         color: var(--color-accent);
       }
+    }
+
+    & > p {
+      font-size: 1.8rem;
     }
   }
 }
@@ -19,7 +23,7 @@
     & > div {
       width: 80%;
       & > h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
     }
   }
@@ -28,22 +32,10 @@
   .contact {
     & > div {
       & > h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
       & > p {
-        font-size: 1rem;
-      }
-    }
-  }
-}
-@media screen and (max-width: 450px) {
-  .contact {
-    & > div {
-      & > h1 {
-        font-size: 1.2rem;
-      }
-      & > p {
-        font-size: 1rem;
+        font-size: 1.6rem;
       }
     }
   }
