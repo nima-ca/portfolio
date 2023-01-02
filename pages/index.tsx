@@ -6,16 +6,15 @@ export default function Home() {
     <main className={styles.home}>
       <div className={styles.header}>
         <TypeAnimation
-          cursor={false}
           sequence={[
             `I'm a Front End Developer! 😁`,
-            2000,
+            1000,
             "I Develop Web Applications! 🍕",
-            2000,
+            1000,
             "I Love JavaScript and TypeScript! 😍",
-            2000,
+            1000,
             "I use React and NextJs! 🧙‍♂️",
-            2000,
+            1000,
           ]}
           speed={60}
           wrapper="h2"

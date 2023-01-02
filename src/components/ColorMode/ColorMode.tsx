@@ -4,7 +4,7 @@ import { Moon } from "../../utils/icons/Moon";
 import { Sun } from "../../utils/icons/Sun";
 
 const ColorMode = () => {
-  const [colorMode, setColorMode] = useState("");
+  const [colorMode, setColorMode] = useState("dark");
 
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
