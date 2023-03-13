@@ -42,9 +42,3 @@ const ResumePage = () => {
 };
 
 export default ResumePage;
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
-}

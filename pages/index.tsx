@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import styles from "../styles/Home.module.scss";
 
-export default function Home() {
+const HomePage = () => {
   return (
     <main className={styles.home}>
       <div className={styles.header}>
@@ -27,10 +27,6 @@ export default function Home() {
       </p>
     </main>
   );
-}
+};
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
-}
+export default HomePage;
